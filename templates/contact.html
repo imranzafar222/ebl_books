@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+
+<div class="thumbnail">
+  <img class="aa" src="/static/img/b12.jpg" alt="">
+  <div class="my-4 caption ea">
+      <h1 class="eb">Contact Us</h1>
+      <p class="ad"><b>For more information, please feel free to send a message via our contact form.</b></p>
+  </div>
+</div>
+<div class="text-center ec">
+  <div class="container text-center my-4 ed">
+    <form method="post" action="/contact" style="background-color: #272e38; border-radius: 10px; padding: 10px 0 15px 0;">
+      {% csrf_token %}
+      <div class="container" id="ef">
+        <div class="mb-3">
+          <label for="formGroupExampleInput" class="form-label"><b>First Name</b></label>
+          <input type="text" class="form-control" id="formGroupExampleInput" name="fname" placeholder="Enter first name">
+        </div>
+        <div class="mb-3">
+          <label for="formGroupExampleInput2" class="form-label"><b>Last Name</b></label>
+          <input type="text" class="form-control" id="formGroupExampleInput2" name="lname" placeholder="Enter last name">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label"><b>Email Address</b></label>
+            <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="Enter your email address">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlTextarea1" class="form-label"><b>Message</b></label>
+          <textarea class="form-control" id="exampleFormControlTextarea1" name="textarea" rows="3" placeholder="Write your message here"></textarea>
+        </div>
+        <button type="submit" class="btn btn-danger" id="eg" name="button">Sign up</button>
+      </div>
+    </form>
+    <div class="text-center my-4">
+      <h2><b>Newsletter</b></h2>
+      <p><b>Subscribe to the newsletter to join our mailing list!</b></p>
+      <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Enter Your Email Address" aria-label="Email Address" aria-describedby="button-addon2">
+        <button class="btn btn-danger" type="button" id="button-addon2">Subscribe</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock body %}
